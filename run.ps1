@@ -19,8 +19,8 @@ for ($i = 1; $i -le $limit; $i++) {
         Write-Host "Successfully logged in. Waiting $delay milliseconds..."
         Start-Sleep -Milliseconds $delay
         
-        # $logout = Disconnect-Core -IpAddress $ip -Token $session.token
-        # Write-Host "Logged out of session $session.token"
+        $logout = Disconnect-Core -IpAddress $ip -Token $session.token
+        Write-Host "Logged out of session $session.token"
     }
     else {
         Write-Warning "Failed to log in: $($session.error)"
